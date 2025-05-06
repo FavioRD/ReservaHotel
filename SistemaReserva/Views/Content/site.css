@@ -1,0 +1,42 @@
+﻿/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 56px; /* Para fixed navbar */
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), url('https://via.placeholder.com/1920x600?text=Luxury+Hotel') no-repeat center center;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Cards de habitaciones */
+.card {
+    transition: transform 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+/* Botones */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 10px 20px;
+}
+
+/* Footer */
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+    footer a:hover {
+        color: #ddd;
+    }

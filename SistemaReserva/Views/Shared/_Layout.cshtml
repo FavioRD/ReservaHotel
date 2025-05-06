@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hotel Luxury Palace</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome (Íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos personalizados -->
+    <link href="~/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar -->
+    @Html.Partial("_Navigation")
+
+    <!-- Contenido principal -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Hotel Luxury Palace</h5>
+                    <p>El mejor lugar para tu descanso.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Siempreviva 123</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                &copy; 2023 Hotel Luxury Palace - Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

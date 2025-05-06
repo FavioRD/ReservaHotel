@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SistemaReserva.Models.Reserva>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de Reservas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Listado de Reservas</h2>
+
+        <a class="btn btn-primary mb-3" href="@Url.Action("Crear", "Reserva")">Nueva Reserva</a>
+
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.IdReserva)</th>
+                    <th>@Html.DisplayNameFor(model => model.IdHuesped)</th>
+                    <th>@Html.DisplayNameFor(model => model.IdHabitacion)</th>
+                    <th>@Html.DisplayNameFor(model => model.FechaEntrada)</th>
+                    <th>@Html.DisplayNameFor(model => model.FechaSalida)</th>
+                    <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.IdReserva)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IdHuesped)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IdHabitacion)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FechaEntrada)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FechaSalida)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Estado)</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="@Url.Action("Edit", "Reserva", new { id = item.IdReserva })">Editar</a>
+                            <a class="btn btn-sm btn-info" href="@Url.Action("Details", "Reserva", new { id = item.IdReserva })">Detalles</a>
+                            <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Reserva", new { id = item.IdReserva })">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

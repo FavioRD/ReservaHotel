@@ -1,0 +1,70 @@
+﻿@model SistemaReserva.Models.Huesped
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear Huésped</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Crear Huésped</h2>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="card p-4 shadow-sm">
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                <!-- Nombre -->
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Apellido -->
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Teléfono -->
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-between">
+                    <input type="submit" value="Guardar" class="btn btn-success" />
+                    <a href="@Url.Action("Index", "Huesped")" class="btn btn-secondary">Volver al listado</a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
