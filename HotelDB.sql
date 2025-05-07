@@ -303,5 +303,7 @@ BEGIN
 END
 GO
 
+print 'hello world';
+
 PRINT '¡Base de datos HotelDB creada y poblada con éxito! 🎉';
 
